@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ESCUELA [
+  <!ELEMENT ESCUELA (CURSO*)>
+  <!ELEMENT CURSO (NOMBRECURSO, DURACION, DESCRIPCION, (BECAS | NOBECAS), AULA, PRECIO, SEMANAS, PROFESORES, TEMAS)>
+
+  <!ELEMENT NOMBRECURSO (#PCDATA)>
+  <!ELEMENT DURACION (#PCDATA)>
+  <!ELEMENT DESCRIPCION (#PCDATA)>
+  <!ELEMENT BECAS EMPTY>
+  <!ELEMENT NOBECAS EMPTY>
+  <!ELEMENT AULA (NUMPLANTA, NUMAULA)>
+    <!ELEMENT NUMPLANTA (#PCDATA)>
+    <!ELEMENT NUMAULA (#PCDATA)>
+  <!ELEMENT PRECIO (ANTIGUOSALUMNOS, NUEVOSALUMNOS)>
+  <!ELEMENT SEMANAS (SEMANA+)>
+    <!ELEMENT SEMANA (INICIO, FIN)>
+      <!ELEMENT INICIO (DIA, MES, ANO)>
+      <!ELEMENT FIN (DIA, MES, ANO)>
+        <!ELEMENT DIA (#PCDATA)>
+        <!ELEMENT MES (#PCDATA)>
+        <!ELEMENT ANO (#PCDATA)>
+  <!ELEMENT PROFESORES (PROFESOR+)>
+    <!ELEMENT PROFESOR (NOMBRE, APELLIDOS)>
+      <!ELEMENT NOMBRE (#PCDATA)>
+      <!ELEMENT APELLIDOS (#PCDATA)>
+  <!ELEMENT TEMAS (TEMA+)>
+    <!ELEMENT TEMA (TITULO, RESUMEN, PALABRASCLAVE, EJERCICIOS)>
+      <!ELEMENT TITULO (#PCDATA)>
+      <!ELEMENT RESUMEN (#PCDATA)>
+      <!ELEMENT PALABRASCLAVE (#PCDATA)>
+      <!ELEMENT EJERCICIOS ANY>
+        <!ELEMENT PRACTICOS (NUMEJERCICIOS, DURACION)>
+        <!ELEMENT TEORICOS (NUMEJERCICIOS, DURACION)>
+          <!ELEMENT NUMEJERCICIOS (#PCDATA)>
+          <!ELEMENT DURACION (#PCDATA)>
+  
+  <!ATTLIST CURSO IDENTIFICADOR ID #REQUIRED>
+  <!ATTLIST AULA INFORMATICA (SI | NO)>
+  <!ATTLIST SEMANA HORARIO (MAÑANA | TARDE)>
+  <!ATTLIST PROFESOR HORARIO (MAÑANA | TARDE)>
+  <!ATTLIST TEMA NUMERO  #REQUIRED>
+]>
+
+<ESCUELA>
+    <CURSO IDENTIFICADOR="">
+        <NOMBRECURSO></NOMBRECURSO>
+        <DURACION></DURACION>
+        <DESCRIPCION></DESCRIPCION>
+        <NOBECAS/>
+        <AULA INFORMATICA="">
+            <NUMPLANTA></NUMPLANTA>
+            <NUMAULA></NUMAULA>
+        </AULA>
+        <PRECIO>
+            <ANTIGUOSALUMNOS></ANTIGUOSALUMNOS>
+            <NUEVOSALUMNOS></NUEVOSALUMNOS>
+        </PRECIO>
+        <SEMANAS>
+            <SEMANA HORARIO="">
+                <INICIO>
+                    <DIA></DIA>
+                    <MES></MES>
+                    <ANO></ANO>
+                </INICIO>
+                <FIN>
+                    <DIA></DIA>
+                    <MES></MES>
+                    <ANO></ANO>
+                </FIN>
+            </SEMANA>
+            <SEMANA HORARIO="">
+                <INICIO>
+                    <DIA></DIA>
+                    <MES></MES>
+                    <ANO></ANO>
+                </INICIO>
+                <FIN>
+                    <DIA></DIA>
+                    <MES></MES>
+                    <ANO></ANO>
+                </FIN>
+            </SEMANA>
+        </SEMANAS>
+        <PROFESORES>
+            <PROFESOR TIPO="">
+                <NOMBRE></NOMBRE>
+                <APELLIDOS></APELLIDOS>
+            </PROFESOR>
+            <PROFESOR TIPO="">
+                <NOMBRE></NOMBRE>
+                <APELLIDOS></APELLIDOS>
+            </PROFESOR>
+        </PROFESORES>
+        <TEMAS>
+            <TEMA NUMERO="">
+                <TITULO></TITULO>
+                <RESUMEN></RESUMEN>
+                <PALABRASCLAVE></PALABRASCLAVE>
+                <EJERCICIOS>
+                    <PRACTICOS>
+                        <NUMEJERCICIOS></NUMEJERCICIOS>
+                        <DURACION></DURACION>
+                    </PRACTICOS>
+                    <TEORICOS>
+                        <NUMEJERCICIOS></NUMEJERCICIOS>
+                        <DURACION></DURACION>
+                    </TEORICOS>
+                </EJERCICIOS>
+            </TEMA>
+            <TEMA NUMERO="">
+                <TITULO></TITULO>
+                <RESUMEN></RESUMEN>
+                <PALABRASCLAVE></PALABRASCLAVE>
+                <EJERCICIOS>
+                    <PRACTICOS>
+                        <NUMEJERCICIOS></NUMEJERCICIOS>
+                        <DURACION></DURACION>
+                    </PRACTICOS>
+                    <TEORICOS>
+                        <NUMEJERCICIOS></NUMEJERCICIOS>
+                        <DURACION></DURACION>
+                    </TEORICOS>
+                </EJERCICIOS>
+            </TEMA>
+        </TEMAS>
+    </CURSO>
+</ESCUELA>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE modelos [
+    <!ELEMENT modelos (modelo*)>   
+    <!ELEMENT modelo (descripcion?)>
+
+        <!ELEMENT descripcion (motor?, potencia?, consumo_medio*, precio_base?)>
+            <!ELEMENT motor (#PCDATA)>
+            <!ELEMENT potencia (#PCDATA)>
+            <!ELEMENT consumo_medio (#PCDATA)>
+            <!ELEMENT precio_base (#PCDATA)>  
+   
+        <!ATTLIST modelo ref ID #REQUIRED>
+        <!ATTLIST modelo otrasref IDREFS #IMPLIED>
+        <!ATTLIST motor refs CDATA #REQUIRED>
+        <!ATTLIST consumo_medio vel CDATA #REQUIRED>
+]>
+
+<modelos>
+    <modelo ref="M3456"/>
+    <modelo ref="M4568" otrasref="M2134 M3456">
+        <descripcion>
+            <motor refs="M3456">Motor 1.5cc de tres cilindros</motor>
+            <potencia>128CV</potencia>
+            <consumo_medio vel="100km">7L</consumo_medio>
+            <precio_base>18700€</precio_base>
+        </descripcion>
+    </modelo>
+    <modelo ref="M6789"/>
+    <modelo ref="M8674"/>
+    <modelo ref="M2134" otrasref="M4568 M8674">
+        <descripcion>
+            <motor refs="M3456">Motor 2000cc de cuatro cilindros</motor>
+            <potencia>163CV</potencia>
+            <consumo_medio vel="100km">6,8L</consumo_medio>
+            <precio_base>22300€</precio_base>
+        </descripcion>
+    </modelo>
+</modelos>
